@@ -36,18 +36,9 @@
     		<form action="register_account.html" method="get"
         		name="registration_form" id="registration_form">
     			<fieldset>
-	        		<legend>Registration Information</legend>
+	        		<legend>Member Information</legend>
 	        		<label for="email">E-Mail:</label>
 	        		<input type="email" name="email" id="email" autofocus required><br>
-	        		<label for="password">Password:</label>
-	        		<input type="password" name="password" id="password" required
-	                   	   placeholder="At least 6 letters or numbers"
-	                   	   pattern="[a-zA-Z0-9]{6,}" title="Must be at least 6 alphanumeric characters"><br>
-	        		<label for="verify">Verify Password:</label>
-	        		<input type="password" name="verify" id="verify" required><br>
-    			</fieldset>
-    			<fieldset>
-        			<legend>Member Information</legend>
         			<label for="first_name">First Name:</label>
 					<input type="text" name="first_name" id="first_name" required><br>
 					<label for="last_name">Last Name:</label>
@@ -66,20 +57,59 @@
 				       	   pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="Must be 999-999-999 format"><br>
 				</fieldset>
 				<fieldset>
-					<legend>Membership Information</legend>
-					<label for="membership_type">Membership Type:</label>
+					<legend>Ordering Information</legend>
+					<label for="membership_type">Order Type:</label>
 					<select name="membership_type" id="membership_type">
-				    	<option value="j">Junior</option>
-				    	<option value="r">Regular</option>            
-				    	<option value="c">Charter</option>
+				    	<option value="j">Member</option>
+				    	<option value="r">Donor</option>            
+				    	<option value="c">Single</option>
 					</select><br>
-					<label for="starting_date">Starting Date:</label>
-					<input type="date" name="starting_date" id="starting_date" required><br>
-					<label for="tickets">Tickets for Guests:</label>
-					<input type="number" name="tickets" id="tickets" value="2" min="1" max="4" placeholder="from 1 to 4"><br>
+					<label for="tickets">Number of Tickets:</label>
+					<input type="number" name="tickets" id="tickets" min="1" max="4" placeholder="Number of single tickets"><br>
 				</fieldset>
+			        <fieldset id="Payment">
+					<legend>Payment Method</legend>
+					<input type="radio" name="payment" id="payment1" value="payment1">
+					<label for="payment1">Bill Me</label>
+					<input type="radio" name="payment" id="payment2" value="payment2">
+					<label for="payment2">Credit Card</label>
+				</fieldset>/
+			<fieldset>
+					<legend>Credit Card Information</legend>
+					<label for="card_info">Card Type:</label>
+					<select name="card_info" id="card_info">
+						<option value="j">Visa</option>
+						<option value="r">Mastercard</option>
+						<option value="c">Discover</option>
+					</select>
+					<label for="card_number">Card Number:</label>
+					<input type="text" name="card_number" id="card_number" placeholder="16 digits" pattern="\d{16}" required>
+					<label for="month_expiration">Expiration Date:</label>
+					<select name="month_expiration" id="month_expiration">
+						<option value="j">January</option>
+						<option value="j">February</option>
+						<option value="j">March</option>
+						<option value="j">April</option>
+						<option value="j">May</option>
+						<option value="j">June</option>
+						<option value="j">July</option>
+						<option value="j">August</option>
+						<option value="j">September</option>
+						<option value="j">October</option>
+						<option value="j">November</option>
+						<option value="j">December</option>
+					</select>
+					<select name="year_expiration" id="year_expiration">
+						<option value="j">2024</option>
+						<option value="j">2025</option>
+						<option value="j">2026</option>
+						<option value="j">2027</option>
+						<option value="j">2028</option>
+					</select>
+			</fieldset>
+				
 				<fieldset id="buttons">
-					<legend>Submit Your Membership</legend>
+					<legend>Submit Your Order</legend>
 					<label>&nbsp;</label>
 					<input type="submit" id="submit" value="Submit">
 					<input type="reset" id="reset" value="Reset Fields"><br>
